@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/boxes.dart';
 import 'package:flutter_application_1/model/registration.dart';
 import 'package:flutter_application_1/page/registration_page.dart';
+import 'package:flutter_application_1/widgets/registration_dialog.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
@@ -138,29 +139,13 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "I'm a new user.",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return RegistrationPage();
-                        }));
-                      },
-                      child: Text(
-                        "Sign up",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.red),
-                      ),
-                    )
-                  ],
+              FloatingActionButton(
+                child: Icon(Icons.add),
+                onPressed: () => showDialog(
+                  context: context,
+                  builder: (context) => RegistrationDialog(
+                    onClickedDone: addRegistration,
+                  ),
                 ),
               )
             ],
@@ -168,5 +153,16 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  addRegistration(String name, String email, String password) {
+    final registration = Registration()
+      ..name = name
+      ..createdDate = DateTime.now()
+      ..email = email
+      ..password = password;
+
+    final box = Boxes.getRegistrations();
+    box.add(registration);
   }
 }
