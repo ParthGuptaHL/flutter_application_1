@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
                     height: 50,
                   ),
                   Text(
-                    "Welcome",
+                    "Welcome To",
                     style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    "To App",
+                    "Habilelabs",
                     style: TextStyle(
                         fontSize: 30,
                         color: Colors.black,
@@ -51,12 +51,11 @@ class LoginPage extends StatelessWidget {
                     controller: emailController,
                     decoration: InputDecoration(
                       labelText: "Email ID",
-                      labelStyle: TextStyle(
-                          fontSize: 14, color: Colors.redAccent.shade100),
+                      labelStyle: TextStyle(fontSize: 14, color: Colors.black),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(
-                          color: Colors.red.shade300,
+                          color: Colors.black,
                         ),
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -73,8 +72,7 @@ class LoginPage extends StatelessWidget {
                     controller: passController,
                     decoration: InputDecoration(
                       labelText: "Password",
-                      labelStyle:
-                          TextStyle(fontSize: 14, color: Colors.grey.shade400),
+                      labelStyle: TextStyle(fontSize: 14, color: Colors.black),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(
@@ -139,6 +137,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
+              Text('New User? Sign Up Below'),
               FloatingActionButton(
                 child: Icon(Icons.add),
                 onPressed: () => showDialog(
