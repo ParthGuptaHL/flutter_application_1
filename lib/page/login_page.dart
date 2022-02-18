@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    "Login",
+                    "To App",
                     style: TextStyle(
                         fontSize: 30,
                         color: Colors.black,
