@@ -97,9 +97,6 @@ class LoginPage extends StatelessWidget {
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                     ),
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
                   Container(
                     height: 50,
                     width: double.infinity,
@@ -119,7 +116,9 @@ class LoginPage extends StatelessWidget {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                              color: Colors.blue, fontWeight: FontWeight.bold),
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -128,16 +127,16 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: 16,
                   ),
-                  Container(
-                    height: 50,
-                    width: double.infinity,
-                  ),
                   SizedBox(
                     height: 30,
                   ),
                 ],
               ),
-              Text('New User? Sign Up Below'),
+              SizedBox(
+                height: 30,
+              ),
+              Text('New User? Sign Up Below',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
               FloatingActionButton(
                 child: Icon(Icons.add),
                 onPressed: () => showDialog(
